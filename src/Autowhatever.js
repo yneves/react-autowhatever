@@ -230,7 +230,9 @@ export default class Autowhatever extends Component {
 
     return (
       <div {...theme('container', 'container', isOpen && 'containerOpen')}>
-        <input {...inputProps} />
+        {this.props.inputProps.type === 'textarea'
+          ? <textarea {...inputProps} />
+          : <input {...inputProps} /> }
         {renderedItems}
       </div>
     );
